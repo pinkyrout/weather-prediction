@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: #66b6c5;
 }
 
 .App-logo {
@@ -29,4 +30,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#forecast{
+  background: #66b6c5;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.Max-temp{
+  background: #66b6c5;
 }
