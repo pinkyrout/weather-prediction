@@ -17,7 +17,8 @@ class Forecast extends React.Component
   }
 
   getTemp(temperature){
-    
+    let temp_in_celsius = (temperature/10).toFixed(2);
+    return temp_in_celsius;
   }
 
   render(){
@@ -25,8 +26,8 @@ class Forecast extends React.Component
       <div className = "weather-card">
         <h6 className = "date">Date {this.getDate(this.props.date_time)}</h6>
         <h6 className = "date">Time {this.getTime(this.props.date_time)}</h6>
-        <h6 className = "max-temperature">Max Temp: {this.props.max_temp} Farenhite</h6>
-        <h6 className = "min-temperature">Min Temp: {this.props.min_temp} Farenhite</h6>
+        <h6 className = "max-temperature">Max Temp: {this.getTemp(this.props.max_temp)} Celsius</h6>
+        <h6 className = "min-temperature">Min Temp: {this.getTemp(this.props.min_temp)} Celsius</h6>
       </div>      
     )
   }
