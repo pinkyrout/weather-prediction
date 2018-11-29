@@ -9,7 +9,7 @@ class Dashboard extends React.Component
   }
 
   componentDidMount(){
-    fetch("http://api.openweathermap.org/data/2.5/forecast?q=London,uk&appid=afb187b8da4c89148a32f68e78c27ff5", {method: "GET"})
+    fetch("http://api.openweathermap.org/data/2.5/forecast?q=Pune&appid=afb187b8da4c89148a32f68e78c27ff5", {method: "GET"})
       .then(response => {return response.json()
         console.log(response)})
       .then(data => { console.log(data)

@@ -16,6 +16,10 @@ class Forecast extends React.Component
   	return time;
   }
 
+  getTemp(temperature){
+    
+  }
+
   render(){
     return( 
       <div className = "weather-card">
