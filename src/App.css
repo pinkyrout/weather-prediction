@@ -32,7 +32,7 @@
   }
 }
 
-#forecast{
+.container1{
   background: #66b6c5;
   border-radius: 5px;
   padding: 10px;
@@ -40,4 +40,51 @@
 
 .Max-temp{
   background: #66b6c5;
+}
+
+.weather-card{
+  background-size: cover;
+  margin: 10px auto;
+  height: 400px;
+  width: 450px;
+  background: #fff;
+  box-shadow: 0 1px 38px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  background: url("https://s-media-cache-ak0.pinimg.com/564x/cf/1e/c4/cf1ec4b0c96e59657a46867a91bb0d1e.jpg") no-repeat;
+}
+
+.header{
+  margin: 40px auto;
+  font-size: 40px;
+  font-weight: 600;
+  padding-left: 50px;
+  font-style: italic;
+  color: grey;
+}
+
+.date{
+  margin: 20px auto;
+  font-size: 25px;
+  font-weight: 200;
+  font-style: italic;
+  color: white;
+  text-align: center;
+}
+
+.max-temperature{
+  margin: 40px auto;
+  font-size: 25px;
+  font-weight: 200;
+  font-style: italic;
+  color: yellow;
+  text-align: center;
+}
+
+.min-temperature{
+  margin: 20px auto;
+  font-size: 25px;
+  font-weight: 200;
+  font-style: italic;
+  color: lightgreen;
+  text-align: center;
 }
