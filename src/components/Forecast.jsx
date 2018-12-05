@@ -7,7 +7,7 @@ class Forecast extends React.Component
     let month = date.slice(5, 7);
     let day = date.slice(8,10);
 
-    date = day + "/" + month + "/" + "/" + year;
+    date = day + "/" + month + "/" + year;
     return date;
   }
 
