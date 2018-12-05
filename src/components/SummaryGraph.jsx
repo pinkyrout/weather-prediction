@@ -40,7 +40,7 @@ class SummaryGraph extends React.Component
           label: "Min Temp",
           data: [23, 22, 21, 24, 21, 22],
           fill: false,
-          lineTension: 0.1,
+          lineTension: 0.4,
           backgroundColor: 'rgba(75,192,192,1)',
           borderColor: 'rgba(75,192,192,1)',
           borderCapStyle: 'butt',
