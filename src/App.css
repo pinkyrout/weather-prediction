@@ -88,3 +88,10 @@
   color: lightgreen;
   text-align: center;
 }
+
+.graph{
+  width: 700px;
+  background: #fff;
+  padding-left: 20px;
+  padding-bottom: 50px;
+}

@@ -54,37 +54,75 @@ class Dashboard extends React.Component
     let maxTemps = [];
     let prevDate;
     let maxTemp;
-    let perDayForecast = 0;
+    let numberOfForecastPerDay = 0;
     data.map((forecast) => {
       let date = this.getDate(forecast.dt_txt);
 
       if(date === prevDate)
       {
         maxTemp = maxTemp + forecast.main.temp_max;
-        perDayForecast++;
+        numberOfForecastPerDay++;
         prevDate = date;
       }
       else
       {
-        if (perDayForecast !== 0)
+        if (numberOfForecastPerDay !== 0)
         {
           //debugger
-          maxTemps.push(this.getTemp(maxTemp/perDayForecast));
+          maxTemps.push(this.getTemp(maxTemp/numberOfForecastPerDay));
         }
-        perDayForecast = 1;
+        numberOfForecastPerDay = 1;
         maxTemp = forecast.main.temp_max;
         prevDate = date;
-      }  
+      }
     })
-    maxTemps.push(this.getTemp(maxTemp/perDayForecast));
+    maxTemps.push(this.getTemp(maxTemp/numberOfForecastPerDay));
     //debugger
     return maxTemps;
+  }
+
+  getMinTempData(){
+    //debugger
+    let data = this.state.forecasts;
+    let minTemps = [];
+    let prevDate;
+    let minTemp;
+    let numberOfForecastPerDay = 0;
+    data.map((forecast) => {
+      let date = this.getDate(forecast.dt_txt);
+
+      if(date === prevDate)
+      {
+        minTemp = minTemp + forecast.main.temp_min;
+        numberOfForecastPerDay++;
+        prevDate = date;
+      }
+      else
+      {
+        if (numberOfForecastPerDay !== 0)
+        {
+          //debugger
+          minTemps.push(this.getTemp(minTemp/numberOfForecastPerDay));
+        }
+        numberOfForecastPerDay = 1;
+        minTemp = forecast.main.temp_min;
+        prevDate = date;
+      }
+    })
+    minTemps.push(this.getTemp(minTemp/numberOfForecastPerDay));
+    //debugger
+    return minTemps;
   }
   
   render(){
     return(
       <div className = "container">
         <Header/>
+        <SummaryGraph 
+          dates = {this.getDates(this.state.forecasts)}
+          maxTemp = {this.getMaxTempData()}
+          minTemp = {this.getMinTempData()}
+        />
         <div className = "row">{
           this.state.forecasts.map((forecast) => {
             //debugger
@@ -98,10 +136,6 @@ class Dashboard extends React.Component
             )
           })
         }</div>
-        <SummaryGraph 
-          dates = {this.getDates(this.state.forecasts)}
-          maxTemp = {this.getMaxTempData()}
-        />
       </div>
     )
   }
